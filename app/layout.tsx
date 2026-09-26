@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,12 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://portfolio-jp-kamau.vercel.app"
-  ),
-  title: "John Kamau — Full-Stack Software Engineer & Systems Architect",
-  description:
-    "Personal portfolio of John Kamau. Full-Stack Software Engineer specializing in distributed system design, event-driven backends, and modern web architectures.",
+  metadataBase: new URL(siteConfig.url),
+  title: `${siteConfig.name} — ${siteConfig.role}`,
+  description: siteConfig.bio,
   keywords: [
     "John Kamau",
     "Full-Stack Engineer",
@@ -33,22 +31,29 @@ export const metadata: Metadata = {
     "Distributed Systems",
     "Kenya",
   ],
-  authors: [{ name: "John Kamau", url: "https://github.com/Mantra2226" }],
-  creator: "John Kamau",
+  authors: [{ name: siteConfig.name, url: siteConfig.socials.github }],
+  creator: siteConfig.name,
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "/",
-    title: "John Kamau — Full-Stack Software Engineer & Systems Architect",
-    description:
-      "Minimalist developer portfolio showcasing flagship systems architecture, high-performance web applications, and open-source projects.",
-    siteName: "John Kamau Portfolio",
+    title: `${siteConfig.name} — ${siteConfig.role}`,
+    description: siteConfig.bio,
+    siteName: `${siteConfig.name} Portfolio`,
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} — ${siteConfig.role}`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "John Kamau — Full-Stack Software Engineer",
-    description:
-      "Specializing in resilient distributed architectures, event-driven backends, and responsive full-stack applications.",
+    title: `${siteConfig.name} — ${siteConfig.role}`,
+    description: siteConfig.bio,
+    images: ["/og-image.png"],
   },
   icons: {
     icon: [

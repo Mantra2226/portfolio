@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, Check, Copy, ExternalLink, ChevronDown } from "lucide-react";
+import { siteConfig } from "@/lib/site-config";
 
 interface EmailContactProps {
   email?: string;
@@ -13,7 +14,7 @@ interface EmailContactProps {
 }
 
 export function EmailContact({
-  email = "desarixpowell@gmail.com",
+  email = siteConfig.email,
   variant = "button",
   align = "center",
   placement = "bottom",

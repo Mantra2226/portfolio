@@ -6,6 +6,7 @@ import { Clock, Eye, ArrowUp } from "lucide-react";
 import { GitHubIcon, LinkedInIcon, NewCommaIcon } from "@/components/icons";
 import { ResumeModal } from "./ResumeModal";
 import { EmailContact } from "./EmailContact";
+import { siteConfig } from "@/lib/site-config";
 
 interface FooterProps {
   githubUsername?: string;
@@ -15,10 +16,10 @@ interface FooterProps {
 }
 
 export function Footer({
-  githubUsername = "Mantra2226",
-  linkedinUrl = "https://www.linkedin.com/in/john-powell-39b295379",
-  newcommaUrl = "https://newcomma.com/kamauislike/",
-  email = "desarixpowell@gmail.com",
+  githubUsername = siteConfig.githubUsername,
+  linkedinUrl = siteConfig.socials.linkedin,
+  newcommaUrl = siteConfig.socials.newcomma,
+  email = siteConfig.email,
 }: FooterProps) {
   const [timeString, setTimeString] = useState<string>("");
   const [isResumeOpen, setIsResumeOpen] = useState(false);

@@ -8,6 +8,7 @@ import { GitHubIcon, LinkedInIcon, NewCommaIcon } from "@/components/icons";
 import { ThemeToggle } from "./ThemeToggle";
 import { ResumeModal } from "./ResumeModal";
 import { EmailContact } from "./EmailContact";
+import { siteConfig } from "@/lib/site-config";
 
 interface HeroProps {
   name?: string;
@@ -18,11 +19,11 @@ interface HeroProps {
 }
 
 export function Hero({
-  name = "JOHN KAMAU",
-  githubUsername = "Mantra2226",
-  linkedinUrl = "https://www.linkedin.com/in/john-powell-39b295379",
-  newcommaUrl = "https://newcomma.com/kamauislike/",
-  email = "desarixpowell@gmail.com",
+  name = siteConfig.headlineName,
+  githubUsername = siteConfig.githubUsername,
+  linkedinUrl = siteConfig.socials.linkedin,
+  newcommaUrl = siteConfig.socials.newcomma,
+  email = siteConfig.email,
 }: HeroProps) {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
 
