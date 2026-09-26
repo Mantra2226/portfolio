@@ -38,3 +38,32 @@ export function LinkedInIcon(props: React.SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+export function NewCommaIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      role="img"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      {...props}
+    >
+      <rect
+        width="16"
+        height="16"
+        rx="8"
+        fill="#171717"
+        stroke="currentColor"
+        strokeWidth="0.5"
+        strokeOpacity="0.25"
+        className="fill-[#171717] dark:fill-zinc-800"
+      />
+      <path
+        d="M5.85734 12.6266L4.35181 9.79384C5.09598 9.35706 5.80669 8.8656 6.47805 8.32352C5.34889 7.92512 4.89107 6.83119 4.89107 5.93755C4.89327 4.28014 6.7972 3.37329 8.23891 3.37329C10.2199 3.37329 11.6484 4.65652 11.6484 6.50102C11.6418 8.9024 8.81999 11.722 5.85734 12.6266Z"
+        fill="#F7CE00"
+      />
+    </svg>
+  );
+}
+

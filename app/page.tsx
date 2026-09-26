@@ -11,6 +11,7 @@ export const revalidate = 3600;
 export default async function Home() {
   const username = process.env.NEXT_PUBLIC_GITHUB_USERNAME || "Mantra2226";
   const linkedinUrl = "https://www.linkedin.com/in/john-powell-39b295379";
+  const newcommaUrl = "https://newcomma.com/kamauislike/";
   const email = "desarixpowell@gmail.com";
 
   const repos = await getGitHubRepositories(username);
@@ -22,6 +23,7 @@ export default async function Home() {
           name="JOHN KAMAU"
           githubUsername={username}
           linkedinUrl={linkedinUrl}
+          newcommaUrl={newcommaUrl}
           email={email}
         />
 
@@ -36,6 +38,7 @@ export default async function Home() {
         <Footer
           githubUsername={username}
           linkedinUrl={linkedinUrl}
+          newcommaUrl={newcommaUrl}
           email={email}
         />
       </div>

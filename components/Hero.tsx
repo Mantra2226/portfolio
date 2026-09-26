@@ -3,15 +3,17 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Mail, ArrowUpRight, Sparkles, MapPin, Eye } from "lucide-react";
-import { GitHubIcon, LinkedInIcon } from "@/components/icons";
+import { ArrowUpRight, Sparkles, MapPin, Eye } from "lucide-react";
+import { GitHubIcon, LinkedInIcon, NewCommaIcon } from "@/components/icons";
 import { ThemeToggle } from "./ThemeToggle";
 import { ResumeModal } from "./ResumeModal";
+import { EmailContact } from "./EmailContact";
 
 interface HeroProps {
   name?: string;
   githubUsername?: string;
   linkedinUrl?: string;
+  newcommaUrl?: string;
   email?: string;
 }
 
@@ -19,6 +21,7 @@ export function Hero({
   name = "JOHN KAMAU",
   githubUsername = "Mantra2226",
   linkedinUrl = "https://www.linkedin.com/in/john-powell-39b295379",
+  newcommaUrl = "https://newcomma.com/kamauislike/",
   email = "desarixpowell@gmail.com",
 }: HeroProps) {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
@@ -154,12 +157,24 @@ export function Hero({
           <motion.a
             whileHover={{ y: -2, scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            href={`mailto:${email}`}
+            href={newcommaUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-mono rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm text-zinc-800 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-white hover:border-zinc-400 dark:hover:border-zinc-700 hover:shadow-xs transition-all"
+            aria-label="New Comma profile"
           >
-            <Mail className="w-3.5 h-3.5" />
-            <span>Email</span>
+            <NewCommaIcon className="w-3.5 h-3.5" />
+            <span>New Comma</span>
+            <ArrowUpRight className="w-3 h-3 text-zinc-400" />
           </motion.a>
+
+          {/* Functional Email Contact Action & Popover */}
+          <EmailContact
+            email={email}
+            variant="button"
+            align="center"
+            placement="bottom"
+          />
 
           {/* Interactive Resume Preview Button */}
           <motion.button

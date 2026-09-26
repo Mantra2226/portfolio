@@ -14,6 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://johnkamau.vercel.app"
+  ),
   title: "John Kamau — Full-Stack Software Engineer & Systems Architect",
   description:
     "Personal portfolio of John Kamau. Full-Stack Software Engineer specializing in distributed system design, event-driven backends, and modern web architectures.",
@@ -35,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://github.com/Mantra2226",
+    url: "/",
     title: "John Kamau — Full-Stack Software Engineer & Systems Architect",
     description:
       "Minimalist developer portfolio showcasing flagship systems architecture, high-performance web applications, and open-source projects.",
@@ -48,7 +51,12 @@ export const metadata: Metadata = {
       "Specializing in resilient distributed architectures, event-driven backends, and responsive full-stack applications.",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
 };
 

@@ -2,19 +2,22 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Clock, Eye, ArrowUp } from "lucide-react";
-import { GitHubIcon, LinkedInIcon } from "@/components/icons";
+import { Clock, Eye, ArrowUp } from "lucide-react";
+import { GitHubIcon, LinkedInIcon, NewCommaIcon } from "@/components/icons";
 import { ResumeModal } from "./ResumeModal";
+import { EmailContact } from "./EmailContact";
 
 interface FooterProps {
   githubUsername?: string;
   linkedinUrl?: string;
+  newcommaUrl?: string;
   email?: string;
 }
 
 export function Footer({
   githubUsername = "Mantra2226",
   linkedinUrl = "https://www.linkedin.com/in/john-powell-39b295379",
+  newcommaUrl = "https://newcomma.com/kamauislike/",
   email = "desarixpowell@gmail.com",
 }: FooterProps) {
   const [timeString, setTimeString] = useState<string>("");
@@ -87,12 +90,23 @@ export function Footer({
             </motion.a>
             <motion.a
               whileHover={{ y: -2 }}
-              href={`mailto:${email}`}
+              href={newcommaUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="p-2 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors"
-              aria-label="Send email"
+              aria-label="New Comma profile"
+              title="New Comma profile"
             >
-              <Mail className="w-4 h-4" />
+              <NewCommaIcon className="w-4 h-4" />
             </motion.a>
+
+            {/* Email Contact Action & Popover */}
+            <EmailContact
+              email={email}
+              variant="icon"
+              align="right"
+              placement="top"
+            />
 
             <button
               onClick={() => setIsResumeOpen(true)}
@@ -118,7 +132,7 @@ export function Footer({
 
         {/* Bottom copyright line */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[11px] font-mono text-zinc-400 dark:text-zinc-600 pt-2 border-t border-zinc-100 dark:border-zinc-900">
-          <p>© {new Date().getFullYear()} John Kamau (John Powell). All rights reserved.</p>
+          <p>© {new Date().getFullYear()} John Kamau. All rights reserved.</p>
           <p>Built with Next.js App Router, TypeScript &amp; Tailwind CSS</p>
         </div>
       </footer>

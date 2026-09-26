@@ -1,0 +1,9 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://johnkamau.vercel.app/sitemap.xml
+
+# Disallow API routes from indexing
+Disallow: /api/
