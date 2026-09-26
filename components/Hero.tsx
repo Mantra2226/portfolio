@@ -73,7 +73,7 @@ export function Hero({
               fill
               priority
               sizes="(max-width: 640px) 176px, (max-width: 768px) 208px, 224px"
-              className="object-cover object-top filter brightness-105 group-hover:scale-108 transition-transform duration-700 ease-out"
+              className="object-cover object-[center_28%] filter brightness-105 group-hover:scale-108 transition-transform duration-700 ease-out"
             />
           </div>
 
