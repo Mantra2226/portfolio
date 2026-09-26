@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://johnkamau.vercel.app"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://portfolio-jp-kamau.vercel.app"
   ),
   title: "John Kamau — Full-Stack Software Engineer & Systems Architect",
   description:
