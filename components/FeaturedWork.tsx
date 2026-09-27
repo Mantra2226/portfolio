@@ -263,13 +263,13 @@ export function FeaturedWork({ projects = FEATURED_PROJECTS }: FeaturedWorkProps
                   Press ESC to close
                 </span>
 
-                <div className="flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-end">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3 w-full sm:w-auto justify-end">
                   {selectedProject.liveUrl && (
                     <a
                       href={selectedProject.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-mono rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-white transition-colors"
+                      className="inline-flex items-center justify-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs font-mono rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-white transition-colors flex-1 sm:flex-initial"
                     >
                       <span>Live Deployment</span>
                       <ExternalLink className="w-3.5 h-3.5" />
@@ -280,11 +280,11 @@ export function FeaturedWork({ projects = FEATURED_PROJECTS }: FeaturedWorkProps
                     href={selectedProject.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 text-xs font-mono font-medium rounded-lg border border-emerald-500/40 bg-emerald-500/10 text-emerald-800 dark:text-emerald-300 hover:bg-emerald-500/20 hover:border-emerald-500 transition-colors"
+                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs font-mono font-medium rounded-lg border border-emerald-500/40 bg-emerald-500/10 text-emerald-800 dark:text-emerald-300 hover:bg-emerald-500/20 hover:border-emerald-500 transition-colors flex-1 sm:flex-initial"
                   >
-                    <GitHubIcon className="w-4 h-4" />
+                    <GitHubIcon className="w-4 h-4 shrink-0" />
                     <span>View Repository</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <ArrowRight className="w-3.5 h-3.5 shrink-0" />
                   </a>
                 </div>
               </div>

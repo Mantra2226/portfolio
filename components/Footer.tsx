@@ -119,8 +119,8 @@ export function Footer({
               title="Preview CV"
             >
               <Eye className="w-3 h-3" />
-              <span className="hidden xs:inline sm:inline">Preview CV</span>
-              <span className="xs:hidden sm:hidden">CV</span>
+              <span className="hidden sm:inline">Preview CV</span>
+              <span className="sm:hidden">CV</span>
             </button>
 
             <button

@@ -53,7 +53,7 @@ export function PhotoGallery() {
         </span>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+      <div className="grid grid-cols-3 gap-2 sm:gap-4">
         {PHOTOS.map((photo, index) => (
           <motion.div
             key={photo.src}
@@ -63,13 +63,13 @@ export function PhotoGallery() {
             transition={{ duration: 0.4, delay: index * 0.1 }}
             whileHover={{ y: -4, scale: 1.02 }}
             onClick={() => setSelectedPhoto(photo)}
-            className="group relative cursor-pointer rounded-xl overflow-hidden border border-zinc-200/80 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900 shadow-sm hover:shadow-lg dark:hover:shadow-[0_0_20px_rgba(16,185,129,0.15)] transition-all duration-300 aspect-[3/4] sm:aspect-[3/4]"
+            className="group relative cursor-pointer rounded-xl overflow-hidden border border-zinc-200/80 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900 shadow-sm hover:shadow-lg dark:hover:shadow-[0_0_20px_rgba(16,185,129,0.15)] transition-all duration-300 aspect-[3/4]"
           >
             <Image
               src={photo.src}
               alt={photo.alt}
               fill
-              sizes="(max-width: 640px) 50vw, 33vw"
+              sizes="(max-width: 640px) 33vw, 33vw"
               className="object-cover object-center filter group-hover:scale-105 transition-transform duration-500 ease-out"
             />
 
@@ -77,25 +77,25 @@ export function PhotoGallery() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
 
             {/* Floating Tag */}
-            <div className="absolute top-3 left-3">
-              <span className="px-2 py-0.5 text-[10px] font-mono uppercase tracking-wider rounded-full bg-black/60 backdrop-blur-md text-emerald-400 border border-emerald-500/30">
+            <div className="absolute top-2 sm:top-3 left-2 sm:left-3">
+              <span className="px-1.5 sm:px-2 py-0.5 text-[9px] sm:text-[10px] font-mono uppercase tracking-wider rounded-full bg-black/60 backdrop-blur-md text-emerald-400 border border-emerald-500/30">
                 {photo.tag}
               </span>
             </div>
 
             {/* Zoom icon hint */}
-            <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-              <div className="p-1.5 rounded-full bg-black/60 backdrop-blur-md text-white">
-                <ZoomIn className="w-3.5 h-3.5" />
+            <div className="absolute top-2 sm:top-3 right-2 sm:right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+              <div className="p-1 sm:p-1.5 rounded-full bg-black/60 backdrop-blur-md text-white">
+                <ZoomIn className="w-3 sm:w-3.5 h-3 sm:h-3.5" />
               </div>
             </div>
 
             {/* Bottom Caption */}
-            <div className="absolute bottom-3 left-3 right-3 text-white space-y-0.5">
-              <p className="text-xs font-medium tracking-tight truncate">
+            <div className="absolute bottom-2 sm:bottom-3 left-2 sm:left-3 right-2 sm:right-3 text-white space-y-0.5">
+              <p className="text-[11px] sm:text-xs font-medium tracking-tight truncate">
                 {photo.title}
               </p>
-              <p className="text-[10px] font-mono text-zinc-300">
+              <p className="text-[9px] sm:text-[10px] font-mono text-zinc-300 hidden sm:block">
                 Click to inspect
               </p>
             </div>
