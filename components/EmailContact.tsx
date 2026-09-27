@@ -119,7 +119,7 @@ export function EmailContact({
           aria-expanded={isOpen}
           aria-haspopup="dialog"
           aria-label={`Contact email ${email}`}
-          className={`inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-mono rounded-lg border transition-all cursor-pointer ${
+          className={`inline-flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 sm:py-2 text-[11px] sm:text-xs font-mono rounded-lg border transition-all cursor-pointer ${
             copied
               ? "border-emerald-500/50 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300"
               : "border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm text-zinc-800 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-white hover:border-zinc-400 dark:hover:border-zinc-700 hover:shadow-xs"
@@ -180,7 +180,7 @@ export function EmailContact({
             transition={{ duration: 0.15, ease: "easeOut" }}
             role="dialog"
             aria-label="Email options"
-            className={`absolute ${placementClass} ${alignClass} z-50 w-72 p-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md shadow-xl shadow-zinc-950/10 dark:shadow-zinc-950/40 text-left`}
+            className={`absolute ${placementClass} ${alignClass} z-50 w-64 sm:w-72 max-w-[calc(100vw-2rem)] p-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md shadow-xl shadow-zinc-950/10 dark:shadow-zinc-950/40 text-left`}
           >
             {/* Header: Email Address Pill with Copy Confirmation */}
             <div className="flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-lg bg-zinc-100/90 dark:bg-zinc-800/70 border border-zinc-200/50 dark:border-zinc-700/50 mb-2">

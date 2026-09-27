@@ -53,7 +53,7 @@ export function PhotoGallery() {
         </span>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
         {PHOTOS.map((photo, index) => (
           <motion.div
             key={photo.src}
@@ -63,13 +63,13 @@ export function PhotoGallery() {
             transition={{ duration: 0.4, delay: index * 0.1 }}
             whileHover={{ y: -4, scale: 1.02 }}
             onClick={() => setSelectedPhoto(photo)}
-            className="group relative cursor-pointer rounded-xl overflow-hidden border border-zinc-200/80 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900 shadow-sm hover:shadow-lg dark:hover:shadow-[0_0_20px_rgba(16,185,129,0.15)] transition-all duration-300 aspect-[3/4]"
+            className="group relative cursor-pointer rounded-xl overflow-hidden border border-zinc-200/80 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900 shadow-sm hover:shadow-lg dark:hover:shadow-[0_0_20px_rgba(16,185,129,0.15)] transition-all duration-300 aspect-[3/4] sm:aspect-[3/4]"
           >
             <Image
               src={photo.src}
               alt={photo.alt}
               fill
-              sizes="(max-width: 640px) 100vw, 33vw"
+              sizes="(max-width: 640px) 50vw, 33vw"
               className="object-cover object-center filter group-hover:scale-105 transition-transform duration-500 ease-out"
             />
 
@@ -111,7 +111,7 @@ export function PhotoGallery() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedPhoto(null)}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md"
+            className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/85 backdrop-blur-md"
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
@@ -119,7 +119,7 @@ export function PhotoGallery() {
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative max-w-lg w-full max-h-[85vh] rounded-2xl overflow-hidden border border-zinc-700 bg-zinc-950 shadow-2xl"
+              className="relative max-w-lg w-full max-h-[85vh] rounded-xl sm:rounded-2xl overflow-hidden border border-zinc-700 bg-zinc-950 shadow-2xl"
             >
               <button
                 onClick={() => setSelectedPhoto(null)}

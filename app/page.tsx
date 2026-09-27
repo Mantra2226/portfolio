@@ -16,7 +16,7 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen bg-ambient bg-[#fafafa] dark:bg-[#09090b] text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
-      <div className="max-w-3xl mx-auto px-6 py-16 md:py-24 space-y-16 sm:space-y-20">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-16 md:py-24 space-y-12 sm:space-y-16 md:space-y-20">
         <Hero
           name={siteConfig.headlineName}
           githubUsername={username}

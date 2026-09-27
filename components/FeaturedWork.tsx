@@ -61,7 +61,7 @@ export function FeaturedWork({ projects = FEATURED_PROJECTS }: FeaturedWorkProps
               whileHover={{ y: -4, scale: 1.01 }}
               whileTap={{ scale: 0.99 }}
               onClick={() => setSelectedProject(project)}
-              className="group relative cursor-pointer p-5 sm:p-6 rounded-2xl border border-zinc-200/90 dark:border-zinc-800/80 bg-white/70 dark:bg-[#121215]/80 backdrop-blur-md transition-all duration-300 hover:border-emerald-500/60 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_0_25px_rgba(16,185,129,0.14)] flex flex-col justify-between overflow-hidden"
+              className="group relative cursor-pointer p-4 sm:p-6 rounded-2xl border border-zinc-200/90 dark:border-zinc-800/80 bg-white/70 dark:bg-[#121215]/80 backdrop-blur-md transition-all duration-300 hover:border-emerald-500/60 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_0_25px_rgba(16,185,129,0.14)] flex flex-col justify-between overflow-hidden"
               role="button"
               tabIndex={0}
               aria-label={`View deep-dive details for ${project.title}`}
@@ -89,7 +89,7 @@ export function FeaturedWork({ projects = FEATURED_PROJECTS }: FeaturedWorkProps
 
                 {/* Primary KPI Metric Callout */}
                 <div className="space-y-0.5 pt-1">
-                  <div className="text-3xl sm:text-4xl font-semibold font-mono tracking-tight text-zinc-950 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-semibold font-mono tracking-tight text-zinc-950 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                     {project.kpiMetric}
                   </div>
                   <div className="text-xs font-mono font-medium text-zinc-500 dark:text-zinc-400">
@@ -146,7 +146,7 @@ export function FeaturedWork({ projects = FEATURED_PROJECTS }: FeaturedWorkProps
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedProject(null)}
-            className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-6 bg-black/80 backdrop-blur-sm"
             role="dialog"
             aria-modal="true"
             aria-labelledby="modal-project-title"
@@ -157,10 +157,10 @@ export function FeaturedWork({ projects = FEATURED_PROJECTS }: FeaturedWorkProps
               exit={{ scale: 0.95, opacity: 0, y: 15 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-2xl max-h-[90vh] flex flex-col rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 shadow-2xl overflow-hidden"
+              className="relative w-full max-w-2xl max-h-[90vh] flex flex-col rounded-xl sm:rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 shadow-2xl overflow-hidden"
             >
               {/* Modal Header */}
-              <div className="p-6 border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50/60 dark:bg-zinc-900/60 backdrop-blur-md">
+              <div className="p-4 sm:p-6 border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50/60 dark:bg-zinc-900/60 backdrop-blur-md">
                 <div className="flex items-start justify-between gap-4">
                   <div className="space-y-1.5">
                     <span className="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono uppercase tracking-wider bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30">
@@ -207,7 +207,7 @@ export function FeaturedWork({ projects = FEATURED_PROJECTS }: FeaturedWorkProps
               </div>
 
               {/* Modal Content Scrollable Area */}
-              <div className="p-6 space-y-6 overflow-y-auto max-h-[60vh]">
+              <div className="p-4 sm:p-6 space-y-5 sm:space-y-6 overflow-y-auto max-h-[60vh]">
                 {/* Problem & Solution Narrative */}
                 <div className="space-y-2">
                   <h4 className="text-xs font-mono uppercase tracking-wider text-zinc-400 dark:text-zinc-500 font-semibold">
@@ -258,12 +258,12 @@ export function FeaturedWork({ projects = FEATURED_PROJECTS }: FeaturedWorkProps
               </div>
 
               {/* Modal Footer with Action Buttons */}
-              <div className="p-4 sm:p-5 border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50/80 dark:bg-zinc-900/80 flex items-center justify-between gap-3">
+              <div className="p-3 sm:p-5 border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50/80 dark:bg-zinc-900/80 flex items-center justify-between gap-2 sm:gap-3">
                 <span className="text-[11px] font-mono text-zinc-400 hidden sm:inline">
                   Press ESC to close
                 </span>
 
-                <div className="flex items-center gap-3 w-full sm:w-auto justify-end">
+                <div className="flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-end">
                   {selectedProject.liveUrl && (
                     <a
                       href={selectedProject.liveUrl}
